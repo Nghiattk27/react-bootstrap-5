@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header/Header';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+import CustomProgressBar from './components/CustomProgressBar/CustomProgressBar';
+import CustomFigure from './components/CustomFigure/CustomFigure';
+import ScrollReveal from 'scrollreveal'
+import { useEffect } from 'react';
+import CustomeOverlay from './components/CustomOverlay/CustomeOverlay';
 
 function App() {
+  useEffect(() => {
+    ScrollReveal().reveal('.login', {
+      interval: 16,
+      reset: true,
+      scale: 1.1,
+      distance: '-200px',
+      origin: 'right',
+      rotate: {
+        x: 0,
+        y: 0,
+        z: 30,
+      },
+    });
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Header /> */}
+
+      <CustomeOverlay />
+
+      {/* <div className='login'>
+        <Login />
+
+      </div> */}
+      {/* <Home /> */}
+      {/* <div className="mt-5" >
+        <CustomProgressBar />
+      </div> */}
+
+      {/* <CustomFigure /> */}
     </div>
   );
 }
-
 export default App;
